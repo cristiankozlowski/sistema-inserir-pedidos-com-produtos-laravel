@@ -15,7 +15,7 @@ Sistema para criação de pedidos com inserção de produtos vinculados
 
 ## Em Ação
 
-! [Sistema em Ação] (sistemaPedidos.gif)
+![] (sistemaPedidos.gif)
 
 
 ## Licença
