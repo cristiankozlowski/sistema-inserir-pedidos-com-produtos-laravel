@@ -17,3 +17,7 @@ nav.menu {
 .menu li a {
     color: #fff;
 }
+
+.product_img {
+    width: 100px;
+}

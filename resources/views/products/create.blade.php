@@ -13,7 +13,7 @@
 
     <h1>Cadastrar Produto</h1>
 
-    <form action="{{ route('products.store') }}" method="post">
+    <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <label for="sku">SKU</label>
@@ -21,6 +21,9 @@
 
         <label for="name">Nome</label>
         <input type="text" name="name" class="form-control" placeholder="Digite o nome do produto">
+
+        <label for="path_image">Imagem do Produto</label>
+        <input type="file" name="path_image" class="form-control">
 
         <label for="description">Descrição</label>
         <textarea name="description" id="description" class="form-control" cols="30" rows="10" placeholder="Digite a descrição do produto"></textarea>

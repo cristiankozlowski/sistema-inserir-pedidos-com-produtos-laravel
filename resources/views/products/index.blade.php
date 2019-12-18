@@ -5,12 +5,13 @@
 
     <h1>Produtos</h1>
 
-    <table class="table table-striped">
+    <table class="table table-striped products">
         <thead>
             <tr>
                 <td>#id</td>
                 <td>SKU</td>
                 <td>Nome</td>
+                <td>Imagem</td>
                 <td>Descrição</td>
                 <td>Preço</td>
                 <td>Ações</td>
@@ -25,6 +26,9 @@
                 <td>{{ $product->id }}</td>
                 <td>{{ $product->sku }}</td>
                 <td>{{ $product->name }}</td>
+                <td>
+                    <img src="{{ env('APP_URL') }}/storage/{{ $product->path_image }}" class="product_img" alt="{{ $product->name }}">
+                </td>
                 <td>{{ $product->description }}</td>
                 <td>{{ $product->price }}</td>
                 <td>

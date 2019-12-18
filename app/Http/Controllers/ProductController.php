@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -39,7 +40,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
         if(empty($request->description)) {
             return redirect()->back()->withInput()->withErrors(['Por favor, informe todos os campos!']);
         }
@@ -47,6 +47,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->sku = $request->sku;
         $product->name = $request->name;
+        $product->path_image = $request->file('path_image')->store('images_products');
         $product->description = $request->description;
         $product->price = $request->price;
         $product->save();
@@ -87,9 +88,16 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+
+        $productBeforeUpdate = Product::find($product->id);
+
+        $urlImage = $productBeforeUpdate->path_image;
+        Storage::delete($urlImage);
+
         $product->sku = $request->sku;
         $product->name = $request->name;
         $product->description = $request->description;
+        $product->path_image = $request->file('path_image')->store('images_products');
         $product->price = $request->price;
         $product->save();
 
@@ -104,6 +112,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        $productBeforeDelete = Product::find($product->id);
+
+        $urlImage = $productBeforeDelete->path_image;
+        Storage::delete($urlImage);
+
         $product->delete();
 
         return redirect()->route('products.index');
