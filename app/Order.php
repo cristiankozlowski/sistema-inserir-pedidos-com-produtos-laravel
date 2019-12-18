@@ -22,6 +22,8 @@ class Order extends Model
 
     public function setPublishAtAttribute($value) {
 
-        $this->attributes['publish_at'] = date('Y-d-m H:i:s', strtotime($value));
+        $date = str_replace('/', '-', $value);
+
+        $this->attributes['publish_at'] = date('Y-m-d H:i:s', strtotime($date));
     }
 }
