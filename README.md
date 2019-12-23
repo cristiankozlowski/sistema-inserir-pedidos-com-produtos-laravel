@@ -1,9 +1,11 @@
 ## Sobre
 
-Sistema para criação de pedidos com inserção de produtos vinculados
+Sistema com criação de pedidos e seus produtos vinculados
 
 - CRUD de produtos.
-- Inserção de pedidos.
+- Upload de imagens do produto.
+- Relacionamento entre tabelas pedido e produto.
+- Criação de pedidos.
 - Visualização dos pedidos e seus produtos.
 
 
@@ -20,4 +22,4 @@ Sistema para criação de pedidos com inserção de produtos vinculados
 
 ## Licença
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Laravel Framework [MIT license](https://opensource.org/licenses/MIT).
