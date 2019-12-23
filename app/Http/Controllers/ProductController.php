@@ -40,9 +40,23 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        if(empty($request->description)) {
-            return redirect()->back()->withInput()->withErrors(['Por favor, informe todos os campos!']);
-        }
+        $rules = [
+            'sku' => 'required|max:16',
+            'name' => 'required',
+            'path_image' => 'required|image:jpeg,png',
+            'price' => 'required'
+        ];
+
+        $messages = [
+            'sku.required' => 'Por favor, preencha o campo SKU',
+            'sku.max' => 'Este campo pode conter o máximo de 15 caracteres',
+            'name.required' => 'Por favor, preencha o campo de nome do produto',
+            'path_image.required' => 'Por favor, selecione uma imagem para o produto',
+            'path_image.image' => 'A imagem deve ser no formato jpeg ou png',
+            'price.required' => 'Por favor, preencha o campo preço'
+        ];
+
+        $request->validate($rules, $messages);
 
         $product = new Product();
         $product->sku = $request->sku;
@@ -88,6 +102,24 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+
+        $rules = [
+            'sku' => 'required|max:16',
+            'name' => 'required',
+            'path_image' => 'required|image:jpeg,png',
+            'price' => 'required'
+        ];
+
+        $messages = [
+            'sku.required' => 'Por favor, preencha o campo SKU',
+            'sku.max' => 'Este campo pode conter o máximo de 15 caracteres',
+            'name.required' => 'Por favor, preencha o campo de nome do produto',
+            'path_image.required' => 'Por favor, selecione uma imagem para o produto',
+            'path_image.image' => 'A imagem deve ser no formato jpeg ou png',
+            'price.required' => 'Por favor, preencha o campo preço'
+        ];
+
+        $request->validate($rules, $messages);
 
         $productBeforeUpdate = Product::find($product->id);
 

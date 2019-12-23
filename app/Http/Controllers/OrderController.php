@@ -45,6 +45,19 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'publish_at' => 'required',
+            'products' => 'required',
+            'total' => 'required'
+        ];
+
+        $messages = [
+            'publish_at.required' => 'Por favor, preencha a data do pedido',
+            'products.required' => 'Por favor, selecione um ou mais produtos',
+            'total.required' => 'Por favor, preencha o campo de valor total'
+        ];
+
+        $request->validate($rules, $messages);
 
         $order = new Order();
         $order->publish_at = $request->publish_at;
