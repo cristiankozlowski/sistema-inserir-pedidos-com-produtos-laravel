@@ -6,6 +6,7 @@ use App\Order;
 use App\Product;
 use App\OrderProduct;
 use Illuminate\Http\Request;
+use App\Http\Requests\Order as OrderRequest;
 
 class OrderController extends Controller
 {
@@ -43,22 +44,8 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(OrderRequest $request)
     {
-        $rules = [
-            'publish_at' => 'required',
-            'products' => 'required',
-            'total' => 'required'
-        ];
-
-        $messages = [
-            'publish_at.required' => 'Por favor, preencha a data do pedido',
-            'products.required' => 'Por favor, selecione um ou mais produtos',
-            'total.required' => 'Por favor, preencha o campo de valor total'
-        ];
-
-        $request->validate($rules, $messages);
-
         $order = new Order();
         $order->publish_at = $request->publish_at;
         $order->total = $request->total;

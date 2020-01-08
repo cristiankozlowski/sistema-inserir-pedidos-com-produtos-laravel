@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\Product as ProductRequest;
 
 class ProductController extends Controller
 {
@@ -38,26 +39,8 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $rules = [
-            'sku' => 'required|max:16',
-            'name' => 'required',
-            'path_image' => 'required|image:jpeg,png',
-            'price' => 'required'
-        ];
-
-        $messages = [
-            'sku.required' => 'Por favor, preencha o campo SKU',
-            'sku.max' => 'Este campo pode conter o máximo de 15 caracteres',
-            'name.required' => 'Por favor, preencha o campo de nome do produto',
-            'path_image.required' => 'Por favor, selecione uma imagem para o produto',
-            'path_image.image' => 'A imagem deve ser no formato jpeg ou png',
-            'price.required' => 'Por favor, preencha o campo preço'
-        ];
-
-        $request->validate($rules, $messages);
-
         $product = new Product();
         $product->sku = $request->sku;
         $product->name = $request->name;
@@ -100,27 +83,8 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-
-        $rules = [
-            'sku' => 'required|max:16',
-            'name' => 'required',
-            'path_image' => 'required|image:jpeg,png',
-            'price' => 'required'
-        ];
-
-        $messages = [
-            'sku.required' => 'Por favor, preencha o campo SKU',
-            'sku.max' => 'Este campo pode conter o máximo de 15 caracteres',
-            'name.required' => 'Por favor, preencha o campo de nome do produto',
-            'path_image.required' => 'Por favor, selecione uma imagem para o produto',
-            'path_image.image' => 'A imagem deve ser no formato jpeg ou png',
-            'price.required' => 'Por favor, preencha o campo preço'
-        ];
-
-        $request->validate($rules, $messages);
-
         $productBeforeUpdate = Product::find($product->id);
 
         $urlImage = $productBeforeUpdate->path_image;
