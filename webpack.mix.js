@@ -13,10 +13,16 @@ const mix = require('laravel-mix');
 
 mix.
     sass('node_modules/bootstrap/scss/bootstrap.scss', 'public/css/bootstrap.css').
+
     styles('resources/css/style.css', 'public/css/style.css').
 
     scripts('node_modules/jquery/dist/jquery.js', 'public/js/jquery.js').
+
     scripts('node_modules/bootstrap/dist/js/bootstrap.js', 'public/js/bootstrap.js').
+
     scripts('node_modules/jquery-mask-plugin/dist/jquery.mask.js', 'public/js/jquery.mask.js').
-    scripts('resources/js/script.js', 'public/js/script.js');
+
+    scripts('resources/js/script.js', 'public/js/script.js').
+
+    version();
 

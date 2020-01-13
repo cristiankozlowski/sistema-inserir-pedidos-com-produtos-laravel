@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sistema de Pedidos</title>
 
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ url(mix('css/bootstrap.css')) }}">
+    <link rel="stylesheet" href="{{ url(mix('css/style.css')) }}">
 </head>
 <body>
 
@@ -31,9 +31,9 @@
     @yield('content')
 
 
-<script src="{{ asset('js/jquery.js') }}"></script>
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<script src="{{ asset('js/jquery.mask.js') }}"></script>
-<script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ url(mix('js/jquery.js')) }}"></script>
+<script src="{{ url(mix('js/bootstrap.js')) }}"></script>
+<script src="{{ url(mix('js/jquery.mask.js')) }}"></script>
+<script src="{{ url(mix('js/script.js')) }}"></script>
 </body>
 </html>
