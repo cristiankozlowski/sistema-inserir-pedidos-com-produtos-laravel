@@ -1,8 +1,8 @@
 {
-    "/css/bootstrap.css": "/css/bootstrap.css",
-    "/css/style.css": "/css/style.css",
-    "/js/jquery.js": "/js/jquery.js",
-    "/js/bootstrap.js": "/js/bootstrap.js",
-    "/js/jquery.mask.js": "/js/jquery.mask.js",
-    "/js/script.js": "/js/script.js"
+    "/css/bootstrap.css": "/css/bootstrap.css?id=30c0e92fac54132432ac",
+    "/css/style.css": "/css/style.css?id=43ce576419acf61a406b",
+    "/js/jquery.js": "/js/jquery.js?id=11c05eb286ed576526bf",
+    "/js/bootstrap.js": "/js/bootstrap.js?id=702049b302bef35ba361",
+    "/js/jquery.mask.js": "/js/jquery.mask.js?id=a1fb4aaee1dcbfd24e6e",
+    "/js/script.js": "/js/script.js?id=1e6edde564c0dc5e627a"
 }

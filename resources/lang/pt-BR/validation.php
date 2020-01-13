@@ -176,7 +176,7 @@ return [
         /* Custom */
         'path_image' => 'imagem do produto',
         'publish_at' => 'data de publicação',
-        'products' => 'produtos'
+        'product' => 'produto(s)'
     ],
 
 ];

@@ -10,9 +10,27 @@
 
     <h3>Produtos</h3>
     @if($products)
-        @foreach($products as $product)
-            <p>{{$product->name}} {{$product->price}}</p>
-        @endforeach
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Imagem</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($products as $product)
+                    <tr>
+                        <td>{{$product->name}}</td>
+                        <td>
+                            <img src="{{ url('/storage/' . $product->path_image) }}" alt="{{$product->name}}" width="50" height="auto">
+                        </td>
+                        <td>{{$product->price}}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     @endif
 </div>
 @endsection

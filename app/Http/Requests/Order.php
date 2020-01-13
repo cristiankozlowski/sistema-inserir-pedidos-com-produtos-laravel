@@ -25,7 +25,7 @@ class Order extends FormRequest
     {
         return [
             'publish_at' => 'required',
-            'products' => 'required',
+            'product' => 'required',
             'total' => 'required'
         ];
     }

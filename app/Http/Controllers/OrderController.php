@@ -31,11 +31,23 @@ class OrderController extends Controller
      */
     public function create()
     {
-        $products = Product::all();
+        $products = Product::orderBy('name', 'ASC')->get();
 
         return view('orders.create', [
             'products' => $products
         ]);
+    }
+
+    /** Get the product via Ajax */
+    public function addItem($id) {
+
+        $product = Product::find($id);
+
+        if(!$product) {
+            return;
+        }
+
+        return $product;
     }
 
     /**
@@ -51,7 +63,7 @@ class OrderController extends Controller
         $order->total = $request->total;
         $order->save();
 
-        $order->products()->attach($request->products);
+        $order->products()->attach($request->product);
 
         return redirect()->route('orders.index');
     }

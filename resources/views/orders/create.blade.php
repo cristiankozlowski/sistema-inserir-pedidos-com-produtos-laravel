@@ -27,20 +27,39 @@
 
         <div class="form-group">
 
-            <label for="products">Selecione o(s) Produto(s)</label>
-            <select multiple id="products" name="products[]"
-                    class="form-control mb-3 {{ ($errors->has('products') ? 'is-invalid' : '') }}"
-
-            >
-                    @foreach($products as $product)
-                        <option value="{{ $product->id }}">{{ $product->name}}</option>
-                    @endforeach
+            <label for="product">Selecione o(s) Produto(s)</label>
+            <select id="product" class="form-control mb-3 {{ ($errors->has('product') ? 'is-invalid' : '') }}">
+                <option value="">Selecione um produto</option>
+                @foreach($products as $product)
+                    <option value="{{ $product->id }}">{{ $product->name}}</option>
+                @endforeach
             </select>
-            @if($errors->has('products'))
+
+            @if($errors->has('product'))
                 <div class="invalid-feedback">
-                    {{$errors->first('products')}}
+                    {{$errors->first('product')}}
                 </div>
             @endif
+
+            <button class="btn btn-sm btn-primary mt-2 add_product" type="button">Adicionar</button>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="list">Produtos adicionados</label>
+            <table class="table table-striped list">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Imagem</th>
+                    <th scope="col">Preço</th>
+                </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+
         </div>
 
         <div class="form-group">

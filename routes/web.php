@@ -26,3 +26,5 @@ Route::resource('produtos', 'ProductController')->names('products')->parameters(
 
 /** Rotas para os pedidos */
 Route::resource('pedidos', 'OrderController')->names('orders')->parameters(['pedidos' => 'order']);
+
+Route::get('item-add/{id}', 'OrderController@addItem')->name('orders.addItem');
