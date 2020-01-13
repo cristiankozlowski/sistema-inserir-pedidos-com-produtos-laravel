@@ -47,7 +47,7 @@
 
             <label for="total">Total</label>
             <input type="text" name="total"
-                    class="form-control mb-3 order_price_total {{ ($errors->has('total') ? 'is-invalid' : '') }}"
+                    class="form-control mb-3 mask_total_price {{ ($errors->has('total') ? 'is-invalid' : '') }}"
                     placeholder="Digite o valor total do produto"
                     value="{{old('total')}}"
                     required

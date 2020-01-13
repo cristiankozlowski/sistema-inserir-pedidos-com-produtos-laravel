@@ -64,7 +64,7 @@
 
         <div class="form-group">
             <label for="price">Preço</label>
-            <input type="text" name="price" class="form-control product_price {{ ($errors->has('price') ? 'is-invalid' : '') }}"
+            <input type="text" name="price" class="form-control mask_price {{ ($errors->has('price') ? 'is-invalid' : '') }}"
                     placeholder="Digite o preço do produto"
                     value="{{old('price')}}"
                     required
