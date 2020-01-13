@@ -18,7 +18,7 @@ Route::resourceVerbs([
 ]);
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('products.index');
 });
 
 /** Rotas para os produtos */
