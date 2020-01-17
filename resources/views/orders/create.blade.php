@@ -6,10 +6,13 @@
 
     <h1>Inserir Pedido</h1>
 
+    <div class="order_callback"></div>
+
     <form action="{{ route('orders.store') }}" method="post">
         @csrf
 
         <div class="form-group">
+
             <label for="publish_at">Data de criação</label>
             <input
                 type="text"
@@ -60,6 +63,9 @@
                 <tbody></tbody>
             </table>
 
+            <div class="loading">
+                <img class="mx-auto d-block" src="{{ url('/images/loading.gif')}}" width="50">
+            </div>
         </div>
 
         <div class="form-group">

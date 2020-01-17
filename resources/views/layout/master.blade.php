@@ -32,6 +32,7 @@
 
 
 <script src="{{ url(mix('js/jquery.js')) }}"></script>
+<script src="{{ url(mix('js/jquery-ui.js')) }}"></script>
 <script src="{{ url(mix('js/bootstrap.js')) }}"></script>
 <script src="{{ url(mix('js/jquery.mask.js')) }}"></script>
 <script src="{{ url(mix('js/script.js')) }}"></script>

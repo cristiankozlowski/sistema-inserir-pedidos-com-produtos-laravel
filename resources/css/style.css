@@ -27,3 +27,35 @@ nav.menu {
 .product_img {
     width: 100px;
 }
+
+.order_callback {
+    position: absolute;
+    right: 25px;
+}
+
+.loading {
+    display: none;
+}
+
+.message {
+    width: 450px;
+}
+
+.message_time {
+    content:"";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border-bottom: 3px solid;
+    animation: message 5s;
+}
+
+@keyframes message {
+    from {
+        width: 0%
+    }
+    to {
+        width: 100%;
+    }
+}

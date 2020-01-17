@@ -18,11 +18,15 @@ mix.
 
     scripts('node_modules/jquery/dist/jquery.js', 'public/js/jquery.js').
 
+    scripts('resources/js/jquery-ui.js', 'public/js/jquery-ui.js').
+
     scripts('node_modules/bootstrap/dist/js/bootstrap.js', 'public/js/bootstrap.js').
 
     scripts('node_modules/jquery-mask-plugin/dist/jquery.mask.js', 'public/js/jquery.mask.js').
 
     scripts('resources/js/script.js', 'public/js/script.js').
+
+    copyDirectory('resources/images', 'public/images').
 
     version();
 
