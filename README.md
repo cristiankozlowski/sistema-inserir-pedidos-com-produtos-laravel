@@ -2,10 +2,11 @@
 
 Sistema com criação de pedidos e seus produtos vinculados
 
-- CRUD de produtos.
-- Upload de imagens do produto.
-- Relacionamento entre tabelas pedido e produto.
-- Criação de pedidos.
+- CRUD de produtos;
+- Upload de imagem do produto;
+- Preview da imagem carregada;
+- Relacionamento entre tabelas pedido e produto;
+- Criação de pedidos (adição de produtos via JQuery/Ajax);
 - Visualização dos pedidos e seus produtos.
 
 
@@ -15,7 +16,7 @@ Sistema com criação de pedidos e seus produtos vinculados
 - Bootstrap.
 
 
-## Em Ação
+## Em execução
 
 ![](sistemaPedidos.gif)
 
