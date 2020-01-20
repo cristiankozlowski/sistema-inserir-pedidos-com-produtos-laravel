@@ -25,7 +25,12 @@ $(document).ready(function() {
                         <div class='message_time'></div>
                     </div>`;
 
+        let scrollDistance = document.documentElement.scrollTop;
+
         $(".order_callback").html(view);
+        $(".message").animate({
+            marginTop: `${scrollDistance}px`
+        }, 500);
         // $(".message").effect("bounce", "slow");
 
         setTimeout(() => {

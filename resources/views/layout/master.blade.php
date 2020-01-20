@@ -14,16 +14,16 @@
     <nav class="menu mb-3">
         <ul>
             <li>
-                <a href="{{ route('products.index') }}">Meus Produtos</a>
+                <a href="{{ route('products.index') }}">Ver Produtos</a>
             </li>
             <li>
-                <a href="{{ route('orders.index') }}">Meus Pedidos</a>
+                <a href="{{ route('orders.index') }}">Ver Pedidos</a>
             </li>
             <li>
                 <a href="{{ route('products.create') }}">Cadastrar Produto</a>
             </li>
             <li>
-                <a href="{{ route('orders.create') }}">Inserir Pedido</a>
+                <a href="{{ route('orders.create') }}">Cadastrar Pedido</a>
             </li>
         </ul>
     </nav>

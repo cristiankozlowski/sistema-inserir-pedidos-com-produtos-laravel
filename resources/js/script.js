@@ -26,6 +26,9 @@ $(document).ready(function() {
                     </div>`;
 
         $(".order_callback").html(view);
+        $(".message").animate({
+            marginTop: "40px"
+        }, 500);
         // $(".message").effect("bounce", "slow");
 
         setTimeout(() => {
