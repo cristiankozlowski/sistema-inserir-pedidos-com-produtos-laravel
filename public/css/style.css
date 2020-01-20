@@ -28,6 +28,11 @@ nav.menu {
     width: 100px;
 }
 
+#image_preview img {
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 0px;
+}
+
 .order_callback {
     position: absolute;
     left: 50%;

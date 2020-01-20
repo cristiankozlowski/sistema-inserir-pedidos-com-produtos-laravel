@@ -60,6 +60,8 @@
                     {{$errors->first('path_image')}}
                 </div>
             @endif
+
+            <div id="image_preview" class="mt-2"></div>
         </div>
 
         <div class="form-group">

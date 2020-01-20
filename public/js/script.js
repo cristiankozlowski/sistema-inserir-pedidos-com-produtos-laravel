@@ -39,6 +39,40 @@ $(document).ready(function() {
         return;
     }
 
+    function refreshTotalPrice(value) {
+
+        let inputTotalPrice = $("[name='total']");
+        let currentValue = parseFloat(value.replace(',', '.'));
+
+        if(inputTotalPrice.val() != "") {
+            let currentTotalPrice = parseFloat(inputTotalPrice.val().replace(',', '.'));
+            let valTotalPrice = currentValue + currentTotalPrice;
+            inputTotalPrice.val(valTotalPrice.toFixed(2).replace('.', ','));
+        } else {
+            inputTotalPrice.val(currentValue.toFixed(2).replace('.', ','));
+        }
+    }
+
+    function loadPreviewImage(elementInput) {
+
+        let reader = new FileReader();
+
+        if(elementInput.files[0]
+            && (elementInput.files[0].type === "image/png") || (elementInput.files[0].type === "image/jpeg"))
+        {
+            reader.onload = function(e) {
+
+                $('#image_preview').append(`
+                    <img width="150" src="${e.target.result}" />
+                `);
+            }
+
+            reader.readAsDataURL(elementInput.files[0]);
+        } else {
+            reader.abort()
+        }
+    }
+
     /** Add products */
     $('.add_product').on('click', function() {
 
@@ -73,9 +107,15 @@ $(document).ready(function() {
                                     </tr>`);
                     item++;
                     ajaxResponse("success", `${product.name} adicionado com sucesso!`);
+                    refreshTotalPrice(product.price);
                 }
             });
         }
+    });
+
+    /* Preview imagem uploaded */
+    $("[name='path_image']").on('change', function() {
+        loadPreviewImage(this);
     });
 })
 
